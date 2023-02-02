@@ -272,13 +272,14 @@ ci
 exp(coef(m))
 exp(cbind(OR = coef(m), ci))
 
-# Probar que se cumple el supuesto del paralelismo
-brant(m)
-
-#Se cumple el supuesto
 
 # Tabla APA regresión ordinal
 tbl_logreg <- tbl_regression(modelo_1, exponentiate = TRUE,
                              label = c(years_resid ~ "Años de residencia", env_home ~ "Sector")) %>%
                               modify_header(label ~ "**Característica**")
 tbl_logreg
+
+# Probar que se cumple el supuesto del paralelismo
+brant(m)
+
+# No se cumple el supuesto
